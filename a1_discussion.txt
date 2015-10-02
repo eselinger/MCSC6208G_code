@@ -1,0 +1,14 @@
+q1 - 
+The resulting distribution of random numbers makes sense. I was sampling from a distribution from 0 to pi, and the distribution of resulting random numbers ranges from 0 to pi. The number of occurences of random numbers follows a sin(x) probability density, which is what was used (e.g. a greater number of random numbers was picked correlating to a large probability in a sin(x) PDF). 
+
+
+
+q2 - 
+My original distribution was a uniform distribution from -0.5 to 0.5. Sampling random numbers from this a certain number of times, and then taking the average, gave a distribution of averages that looks like a gaussian with a mean of 0 and standard deviation of 1. This is what we expected from the Central Limit Theorem. 
+
+
+
+
+q3 
+- 
+In my results, the pressure/number of collisions was higher corresponding to smaller L. Thi makes sense because a smaller L means a smaller "box" that the particles are moving around in, and smaller space with similar movement will result in more collisions with the walls, thus higher pressure. This relationship between pressure and L gave points for P vs. V which basically correspond to the ideal gas law.
