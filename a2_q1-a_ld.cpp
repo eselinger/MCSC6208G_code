@@ -4,7 +4,7 @@
 
 int main(){
 
-	int i, imax=500000;
+	int i, imax=1000000;
 
 	float x, y, z, vx, vy, vz, ax, ay, az, vh;
 	float t;

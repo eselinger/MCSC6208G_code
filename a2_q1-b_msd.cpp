@@ -1,9 +1,11 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
+#include <vector>
 
 int main(){
 
+	int N=1E6+1;
 	int i=0, imax;
 
 	int nwindows;
@@ -11,7 +13,15 @@ int main(){
 	float avg_dx, avg_dy, avg_dz;
 	float avg_dx2, avg_dy2, avg_dz2;
 	float readx, ready, readz;
-	float x[500001],y[500001],z[500001];
+
+	std::vector<double> x;
+	std::vector<double> y;
+	std::vector<double> z;
+//	x.resize(N);
+//	y.resize(N);
+//	z.resize(N);
+
+//	float x[500001],y[500001],z[500001];
 
 	int dt;
 
@@ -24,9 +34,9 @@ int main(){
 	while(!feof(in)){
 		fscanf(in,"%f %f %f",&readx,&ready,&readz);
 		if(!feof(in)){
-			x[i]=readx;
-			y[i]=ready;
-			z[i]=readz;
+			x.push_back(readx);
+			y.push_back(ready);
+			z.push_back(readz);
 			i++;
 		}
 	}
