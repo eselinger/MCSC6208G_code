@@ -4,8 +4,6 @@
 
 int main(){
 
-	int N=1E5+1;
-
 	int i=0, imax;
 
 	int nwindows;
@@ -13,8 +11,7 @@ int main(){
 	float avg_dx, avg_dy, avg_dz;
 	float avg_dx2, avg_dy2, avg_dz2;
 	float readx, ready, readz;
-	float x[100001],y[100001],z[100001];
-//	x=malloc(N*sizeof(float));
+	float x[500001],y[500001],z[500001];
 
 	int dt;
 
