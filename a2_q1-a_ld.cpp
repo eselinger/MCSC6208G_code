@@ -6,7 +6,7 @@ int main(){
 
 	int i, imax=100000;
 
-	float x, v, a, vh;
+	float x, y, z, vx, vy, vz, ax, ay, az, vh;
 	float t;
 	float dt=0.01;
 
@@ -15,29 +15,35 @@ int main(){
 	float kT=1.0;
 
 	float rnd;
-	float grnd;
 
 	FILE *out;
-	out=fopen("ld1part_x.txt","w");
+	out=fopen("ld_3d.dat","w");
 
-	x=0;
-	v=1.0;
-	a=1.0;
+	x=0, y=0, z=0;
+	vx=1.0, vy=1.0, vz=1.0;
+	ax=1.0, ay=1.0, az=1.0;
 
 	for(i=0;i<imax;i++){
 
-		vh=v+0.5*a*dt;
-		
+		vh=vx+0.5*ax*dt;
 		x=x+vh*dt;
-
 		rnd=(float)rand()/RAND_MAX-0.5;
-		
+		ax=-zeta/m*vh+sqrt(24*kT*zeta/(m*m*dt))*rnd;
+		vx=vh+0.5*ax*dt;
 
-		a=-zeta/m*vh+sqrt(24*kT*zeta/(m*m*dt))*rnd;
+		vh=vy+0.5*ay*dt;
+		y=y+vh*dt;
+		rnd=(float)rand()/RAND_MAX-0.5;
+		ay=-zeta/m*vh+sqrt(24*kT*zeta/(m*m*dt))*rnd;
+		vy=vh+0.5*ay*dt;
 
-		v=vh+0.5*a*dt;
+		vh=vz+0.5*az*dt;
+		z=z+vh*dt;
+		rnd=(float)rand()/RAND_MAX-0.5;
+		az=-zeta/m*vh+sqrt(24*kT*zeta/(m*m*dt))*rnd;
+		vz=vh+0.5*az*dt;
 
-		fprintf(out,"%f\n",x);
+		fprintf(out,"%f %f %f\n",x,y,z);
 
 	}
 }
