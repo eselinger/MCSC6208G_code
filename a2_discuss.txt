@@ -1,0 +1,9 @@
+The MSD in x, y, and z are all look close to the exact solution but with very smooth noise. This is because there is correlation between the displacement being calculated. When plotted with the no-correlation, no overlapping windows conditions, the noise is much more erratic however we know there is no correlation between the positions being used to calculate displacement, so this is more accurate.
+
+The total D is fairly accurate (see D_results.txt). We have kt=1 and zeta=1, therefore we can expect D to be approx. 1.
+
+Since D = kT/zeta, it makes sense that the LD simulation shows a positive linear relationship between D and kT.
+
+I expected an inverse relationship between D and zeta (friction coefficient). This does not seem to be accurately shown using LD, although I think this may be due to the fact that I have not changed my correlation window in the LD code. To know what this correlation window should be however, I would need to run the MSD code with correlated displacements calculated, which takes a very long time (and the assignment says I don't need to do this). When the MSD for zeta=0.001 is plotted on a log-log plot, it shows almost purely ballistic motion. This means I could also explore the results with many more integration steps (however this would take much more timea and the assignment says to go to a maximum of 1 million integration steps). I would guess that with these things changed I would get a more accurate representation of the relationship between D and zeta.
+
+The diffusion coefficient D does not depend on m so a relationship is not expected, however the results from the LD look like an inverse relationship (D=1/m). This could be explored with more data.

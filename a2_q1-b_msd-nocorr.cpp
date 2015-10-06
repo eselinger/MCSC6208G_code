@@ -24,8 +24,8 @@ int main(){
 	int pos1,pos2;
 
 	FILE *in,*out;
-	in=fopen("ld_kT1.dat","r");
-	out=fopen("msd-kT1.dat","w");
+	in=fopen("ld_3d.dat","r");
+	out=fopen("msd.dat","w");
 
 	while(!feof(in)){
 		fscanf(in,"%f %f %f",&readx,&ready,&readz);
