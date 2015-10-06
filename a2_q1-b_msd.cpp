@@ -17,11 +17,6 @@ int main(){
 	std::vector<double> x;
 	std::vector<double> y;
 	std::vector<double> z;
-//	x.resize(N);
-//	y.resize(N);
-//	z.resize(N);
-
-//	float x[500001],y[500001],z[500001];
 
 	int dt;
 

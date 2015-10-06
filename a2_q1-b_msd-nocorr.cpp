@@ -1,20 +1,23 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
+#include <vector>
 
 int main(){
 
-	int N=1E5+1;
-
+	int N=1E6+1;
 	int i=0, imax;
 
 	int nwindows;
+	float corr=700;
 
 	float avg_dx, avg_dy, avg_dz;
 	float avg_dx2, avg_dy2, avg_dz2;
 	float readx, ready, readz;
-	float x[500001],y[500001],z[500001];
-//	x=malloc(N*sizeof(float));
+
+	std::vector<double> x;
+	std::vector<double> y;
+	std::vector<double> z;
 
 	int dt;
 
@@ -22,14 +25,14 @@ int main(){
 
 	FILE *in,*out;
 	in=fopen("ld_3d.dat","r");
-	out=fopen("msd.dat","w");
+	out=fopen("msd-nocorr.dat","w");
 
 	while(!feof(in)){
 		fscanf(in,"%f %f %f",&readx,&ready,&readz);
 		if(!feof(in)){
-			x[i]=readx;
-			y[i]=ready;
-			z[i]=readz;
+			x.push_back(readx);
+			y.push_back(ready);
+			z.push_back(readz);
 			i++;
 		}
 	}
@@ -54,7 +57,7 @@ int main(){
 			avg_dz2+=pow(z[pos2]-z[pos1],2.0);
 
 			nwindows++;
-			pos1++;
+			pos1+=fmax(corr,dt);
 			pos2=pos1+dt;
 		}
 	avg_dx=avg_dx/(float)nwindows;
