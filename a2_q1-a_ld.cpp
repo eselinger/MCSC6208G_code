@@ -12,12 +12,12 @@ int main(){
 
 	float zeta=1.0;
 	float m=1.0;
-	float kT=1.0;
+	float kT=2.0;
 
 	float rnd;
 
 	FILE *out;
-	out=fopen("ld_3d.dat","w");
+	out=fopen("ld_kT1.dat","w");
 
 	x=0, y=0, z=0;
 	vx=1.0, vy=1.0, vz=1.0;
